@@ -13,7 +13,7 @@ public class Subzero extends Fighter{
     public  int[] getDatos(){
         return this.datos;
     }
-
+   //Copito de nueve U2744
     @Override
     public void accion() {
         float attack=0;
@@ -21,19 +21,19 @@ public class Subzero extends Fighter{
         switch (numeroAccion) {
             case 1:
                 attack=this.Golpe();
-                System.out.println("\u001B[34m" + this.getName() + "\u001B[0m" + " da un golpe de puño!");
+                System.out.println("\u001B[34m" +  "\uD83E\uDD3C " + this.getName() + "\u001B[0m" + " da un golpe de puño!");
                 break;
             case 2:
                 attack=this.Patada();
-                System.out.println("\u001B[34m" + this.getName() + "\u001B[0m" + " da una patada a la quijada!");
+                System.out.println("\u001B[34m" +  "\uD83E\uDD3C " + this.getName() + "\u001B[0m" + " da una patada a la quijada!");
                 break;
             case 3:
                 attack=this.Salto();
-                System.out.println("\u001B[34m" + this.getName() + "\u001B[0m" + " da un salto hacia atrás!");
+                System.out.println("\u001B[34m" + "\uD83E\uDD38 " + this.getName() + "\u001B[0m" + " da un salto hacia atrás!");
                 break;
             case 4:
                 attack=this.congelamiento();
-                System.out.println("\u001B[34m" + this.getName() + "\u001B[0m" + " tiro un" + "\u001B[36m" + " congelamiento!" + "\u001B[0m");
+                System.out.println("\u001B[34m" +  "\uD83E\uDD3C " + this.getName() + "\u001B[0m" + " tiro un" + "\u001B[36m" + " congelamiento!" + "\u001B[0m");
                 break;
             default:
         }

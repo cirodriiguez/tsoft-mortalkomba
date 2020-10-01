@@ -10,9 +10,9 @@ public class Scorpion extends Fighter {
         return 40;
     }
 
-    public float fatality(){
+    public float fatality(float health){
         System.out.println("\u001B[33m"+ this.getName() + "\u001B[0m" + ": " + "ha utilizado su fatality" +"\u001B[33m"+ "\uD83D\uDCA5"+"\u001B[0m");
-        return this.health;
+        return health;
     }
 
     public  int[] getDatos(){
@@ -26,19 +26,19 @@ public class Scorpion extends Fighter {
         switch (numeroAccion) {
             case 1:
                 attack = this.Golpe();
-                System.out.println("\u001B[33m"+ this.getName() + "\u001B[0m" + ": " + "da un golpe de puño" +"\u001B[33m"+ "\uD83D\uDD25"+"\u001B[0m");
+                System.out.println("\u001B[33m"+ "\uD83E\uDD3C " +this.getName()+"\u001B[0m" + ": " + "da un golpe de puño");
                 break;
             case 2:
                 attack = this.Patada();
-                System.out.println("\u001B[33m"+ this.getName() + "\u001B[0m" + ": " + "da una patada a la quijada" +"\u001B[33m"+ "\uD83D\uDD25"+"\u001B[0m");
+                System.out.println("\u001B[33m"+ "\uD83E\uDD3C " +this.getName() +	"\u001B[0m" + ": " + "da una patada a la quijada");
                 break;
             case 3:
                 attack = this.Salto();
-                System.out.println("\u001B[33m"+ this.getName() + "\u001B[0m" + ": " + "da un salto hacia atrás" +"\u001B[33m"+ "\uD83D\uDD25"+"\u001B[0m");
+                System.out.println("\u001B[33m"+ "\uD83E\uDD38 " + this.getName() +"\u001B[0m" + ": " + "da un salto hacia atrás");
                 break;
             case 4:
                 attack = this.Lanzallamas();
-                System.out.println("\u001B[33m"+ this.getName() + "\u001B[0m" + ": " + "da un salto hacia atrás" +"\u001B[33m"+ "\uD83D\uDD25"+"\u001B[0m");
+                System.out.println("\u001B[33m"+ "\uD83E\uDD3C " +this.getName()  +"\u001B[0m" + ": " + "ataca con lanzallamas" +"\u001B[33m"+ "\uD83D\uDD25"+"\u001B[0m");
                 break;
             default:
         }

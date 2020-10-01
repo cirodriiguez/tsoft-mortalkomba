@@ -12,7 +12,7 @@ public class Pelea {
 
     public static void main (String[] args){
         PeleaScorpionSubzero pelea = new PeleaScorpionSubzero();
-        System.out.println(pelea.pelea() + " WINS!");
+        pelea.pelea();
     }
 
 }
