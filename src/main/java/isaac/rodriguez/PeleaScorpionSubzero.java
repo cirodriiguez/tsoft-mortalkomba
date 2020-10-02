@@ -24,7 +24,7 @@ public class PeleaScorpionSubzero {
         subzero.accion();
         if (subzero.getDatos()[0] == 4) {
             subzero.setHealth(subzero.getHealth() - 100);
-            System.out.println("\u001B[33m" + subzero.getName() + "\u001B[0m" + "-100 de vida");
+            System.out.println("\u001B[34m" + subzero.getName() + "\u001B[0m" + " -100 de vida");
         } else {
             this.golpeCriticoOComunSubzero();
         }

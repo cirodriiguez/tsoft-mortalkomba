@@ -2,12 +2,20 @@ package isaac.rodriguez;
 
 public class Rayden extends Fighter {
     private int datos[] = new int[2];
+    private int nivelRayo = 40;
     public Rayden(String name) {
         super(name);
     }
 
-    public float rayo() {
-        return 0;
+    public float nivelRayo() {
+        return nivelRayo;
+    }
+
+    public void aunmentarRayo(){
+        if (this.nivelRayo >= 200){
+            this.nivelRayo = 40;
+        }
+        this.nivelRayo +=  40;
     }
 
     public  int[] getDatos(){
@@ -22,19 +30,20 @@ public class Rayden extends Fighter {
         switch (numeroAccion) {
             case 1:
                 attack = this.Golpe();
-                System.out.println("\u001B[35m" + this.getName() + "\u001B[0m" + " da un sorprendente golpe!");
+                System.out.println("\u001B[35m" +  "\uD83E\uDD3C " + this.getName() + "\u001B[0m" + " da un sorprendente golpe!");
                 break;
             case 2:
                 attack = this.Patada();
-                System.out.println("\u001B[35m" + this.getName() + "\u001B[0m" + " da increible patada!");
+                System.out.println("\u001B[35m" +	"\uD83C\uDFC3"+ this.getName() + "\u001B[0m" + " da increible patada!");
                 break;
             case 3:
                 attack = this.Salto();
-                System.out.println("\u001B[35m" + this.getName() + "\u001B[0m" + " da un salto muy alto!");
+                System.out.println("\u001B[35m" + "\uD83E\uDD38 " + this.getName() + "\u001B[0m" + " da un salto muy alto!");
                 break;
             case 4:
-                attack = this.rayo();
-                System.out.println("\u001B[35m" + this.getName() + "\u001B[0m" + " da un tiro de algo");
+                attack = this.nivelRayo();
+                System.out.println("\u001B[35m" +  "\uD83E\uDD3C " + this.getName() + "\u001B[0m" + " ataca con rayo"+"\u001B[33m" +
+                        ""+"\u26A1"+ "\u001B[0m");
                 break;
             default:
 
