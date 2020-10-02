@@ -64,7 +64,7 @@ public class PeleaScorpionSubzero {
             if (scorpion.getHealth() <= 100) {
                 subzero.setHealth((subzero.getHealth() - (scorpion.fatality(subzero.getHealth()))));
             } else {
-                this.golpeCriticoOComunScorpion();
+                this.golpeLanzallamasScorpion((float) 1);
             }
         } else {
             this.golpeCriticoOComunScorpion();
