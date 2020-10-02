@@ -5,7 +5,7 @@ public class PeleaScorpionSubzero {
     private Scorpion scorpion = new Scorpion("Scorpion");
 
     public void puntajePeleaScorpionSubzero() {
-        System.out.println("\u001B[31m" + "\u2665" + "\u001B[0m" + "\u001B[34m" + subzero.getName() + "\u001B[0m" +
+        System.out.println("\u001B[31m" + "\u2665" + "\u001B[0m" + "\u001B[34m" + " " + subzero.getName() + "\u001B[0m" +
                 ":" + Math.ceil(subzero.getHealth()) + "\u001B[31m" + "  \u2665" + "\u001B[0m" +
                 "\u001B[33m" + " " + scorpion.getName() + "\u001B[0m" + ":" + Math.ceil(scorpion.getHealth()));
     }
@@ -109,10 +109,9 @@ public class PeleaScorpionSubzero {
             }
         }
 
-        System.out.println("\u001B[33m" + "--------------------" + "\u001B[0m");
-        System.out.println("\u001B[33m" + "\uD83C\uDFC6" + " " + ganador + " WINS!" + " " + "\uD83C\uDFC6" + "\u001B" +
-                "[0m");
-        System.out.println("\u001B[33m" + "--------------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "-----------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "Ganador: " + ganador  + "\u001B[0m");
+        System.out.println("\u001B[33m" + "-----------------" + "\u001B[0m");
         return ganador;
     }
 }

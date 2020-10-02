@@ -5,7 +5,7 @@ public class PeleaSubzeroRayden {
     private Rayden rayden = new Rayden("Rayden");
 
     public void puntajePeleaSubzeroRyaden() {
-        System.out.println("\u001B[31m" + "\u2665" + "\u001B[0m" + "\u001B[34m" + subzero.getName() + "\u001B[0m" +
+        System.out.println("\u001B[31m" + "\u2665" + "\u001B[0m" + "\u001B[34m" + " " + subzero.getName() + "\u001B[0m" +
                 ":" + Math.ceil(subzero.getHealth()) + "\u001B[31m" + "  \u2665" + "\u001B[0m" +
                 "\u001B[35m" + " " + rayden.getName() + "\u001B[0m" + ":" + Math.ceil(rayden.getHealth()));
     }
@@ -99,10 +99,9 @@ public class PeleaSubzeroRayden {
             }
         }
 
-        System.out.println("\u001B[33m" + "--------------------" + "\u001B[0m");
-        System.out.println("\u001B[33m" + "\uD83C\uDFC6" + " " + ganador + " WINS!" + " " + "\uD83C\uDFC6" + "\u001B" +
-                "[0m");
-        System.out.println("\u001B[33m" + "--------------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "-----------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "Ganador: " + ganador  + "\u001B[0m");
+        System.out.println("\u001B[33m" + "-----------------" + "\u001B[0m");
         return ganador;
     }
 }

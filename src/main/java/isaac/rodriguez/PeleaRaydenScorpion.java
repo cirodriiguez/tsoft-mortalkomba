@@ -5,9 +5,9 @@ public class PeleaRaydenScorpion {
     private Scorpion scorpion = new Scorpion("Scorpion");
 
     public void puntajePeleaScorpionRayden() {
-        System.out.println("\u001B[31m" + "\u2665" + "\u001B[0m" + "\u001B[34m" + scorpion.getName() + "\u001B[0m" +
+        System.out.println("\u001B[31m" + "\u2665" + "\u001B[0m" + "\u001B[33m" + " " + scorpion.getName() + "\u001B[0m" +
                 ":" + Math.ceil(scorpion.getHealth()) + "\u001B[31m" + "  \u2665" + "\u001B[0m" +
-                "\u001B[33m" + " " + rayden.getName() + "\u001B[0m" + ":" + Math.ceil(rayden.getHealth()));
+                "\u001B[35m" + " " + rayden.getName() + "\u001B[0m" + ":" + Math.ceil(rayden.getHealth()));
     }
 
     public void golpeCriticoOComunScorpion() {
@@ -103,10 +103,9 @@ public class PeleaRaydenScorpion {
             }
         }
 
-        System.out.println("\u001B[33m" + "--------------------" + "\u001B[0m");
-        System.out.println("\u001B[33m" + "\uD83C\uDFC6" + " " + ganador + " WINS!" + " " + "\uD83C\uDFC6" + "\u001B" +
-                "[0m");
-        System.out.println("\u001B[33m" + "--------------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "-----------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "Ganador: " + ganador  + "\u001B[0m");
+        System.out.println("\u001B[33m" + "-----------------" + "\u001B[0m");
         return ganador;
     }
 }

@@ -1,15 +1,13 @@
 package isaac.rodriguez;
 
 public class Campeonato {
-    private int primero = (int) Math.floor((Math.random() * (3 - 1 + 1) + 1));
-    private int segundo = (int) Math.floor((Math.random() * (3 - 1 + 1) + 1));
     public PeleaSubzeroRayden peleaSubzeroRayden;
     public PeleaScorpionSubzero peleaScorpionSubzero;
     public PeleaRaydenScorpion peleaRaydenScorpion;
 
-    public void pelea(){
+    public String pelea(){
+        String ganador = "";
         int rayden = 0, scorpion=0, subzero=0;
-        String ganador;
         peleaSubzeroRayden = new PeleaSubzeroRayden();
         peleaScorpionSubzero = new PeleaScorpionSubzero();
         peleaRaydenScorpion = new PeleaRaydenScorpion();
@@ -29,20 +27,25 @@ public class Campeonato {
             }
         }
         if (rayden > 1){
-            System.out.println("Ganador Rayden");
+            ganador = "Rayden Campeón";
         } else if (scorpion > 1){
-            System.out.println("Ganador Scorpion");
+            ganador = "Scorpion Campeón";
         }else if (subzero > 1){
-            System.out.println("Ganador Subzero");
-        }else{
-            System.out.println("Empate");
+            ganador = "Subzero Campeón";
+        }else {
+            ganador = "Empate";
         }
+
+        return ganador;
     }
 
     public static void main (String[] args){
         Campeonato campeonato = new Campeonato();
-        campeonato.pelea();
+        String campeon = campeonato.pelea();
+        System.out.println("\u001B[33m" + "---------------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "\uD83C\uDFC6" + " " + campeon + " " + "\uD83C\uDFC6" + "\u001B" +
+                "[0m");
+        System.out.println("\u001B[33m" + "---------------------" + "\u001B[0m");
     }
-
 }
 
