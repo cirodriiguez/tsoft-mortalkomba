@@ -6,7 +6,7 @@ public class Subzero extends Fighter{
         super(name);
     }
 
-    public float congelamiento(){
+    public int congelamiento(){
         return 40;
     }
 

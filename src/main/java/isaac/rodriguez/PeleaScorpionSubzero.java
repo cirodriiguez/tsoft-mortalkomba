@@ -1,4 +1,5 @@
 package isaac.rodriguez;
+import java.util.concurrent.TimeUnit;
 
 public class PeleaScorpionSubzero {
     private Subzero subzero = new Subzero("Subzero");
@@ -12,14 +13,14 @@ public class PeleaScorpionSubzero {
 
     public void golpeCriticoOComunSubzero() {
         if (subzero.Critico()) {
-            scorpion.setHealth((float) (scorpion.getHealth() - (subzero.getDatos()[1] * 1.30)));
+            scorpion.setHealth((int) (scorpion.getHealth() - (subzero.getDatos()[1] * 1.30)));
         } else {
             scorpion.setHealth(scorpion.getHealth() - subzero.getDatos()[1]);
         }
     }
 
     public void golpeCongelamientoSubzero(float intencidad) {
-        scorpion.setHealth((float) (scorpion.getHealth() - (subzero.getDatos()[1] * intencidad)));
+        scorpion.setHealth((int) (scorpion.getHealth() - (subzero.getDatos()[1] * intencidad)));
         this.puntajePeleaScorpionSubzero();
         subzero.accion();
         if (subzero.getDatos()[0] == 4) {
@@ -50,14 +51,14 @@ public class PeleaScorpionSubzero {
 
     public void golpeCriticoOComunScorpion() {
         if (scorpion.Critico()) {
-            subzero.setHealth((float) (subzero.getHealth() - (scorpion.getDatos()[1] * 1.30)));
+            subzero.setHealth((int) (subzero.getHealth() - (scorpion.getDatos()[1] * 1.30)));
         } else {
             subzero.setHealth(subzero.getHealth() - scorpion.getDatos()[1]);
         }
     }
 
     public void golpeLanzallamasScorpion(float intencidad) {
-        subzero.setHealth((float) (subzero.getHealth() - (scorpion.getDatos()[1] * intencidad)));
+        subzero.setHealth((int) (subzero.getHealth() - (scorpion.getDatos()[1] * intencidad)));
         this.puntajePeleaScorpionSubzero();
         scorpion.accion();
         if (scorpion.getDatos()[0] == 4) {
@@ -92,13 +93,23 @@ public class PeleaScorpionSubzero {
     public String pelea() {
         String ganador = "";
         while (subzero.getHealth() > 0 && scorpion.getHealth() > 0) {
-            int turno = (int) Math.floor((Math.random() * (2 - 1 + 1) + 1));
+            int turno = (int) Math.floor((Math.random() * (3 - 1 + 1) + 1));
+            /*try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }*/
             switch (turno) {
                 case 1:
                     this.ataqueSubzeroAScorpion();
                     break;
                 case 2:
                     this.ataqueScorpionASubzero();
+                    break;
+                case 3:
+                    this.ataqueSubzeroAScorpion();
+                    this.ataqueScorpionASubzero();
+                    System.out.println("Ataque los dos");
                     break;
             }
 
@@ -115,18 +126,3 @@ public class PeleaScorpionSubzero {
         return ganador;
     }
 }
-
-/*
-            Pelea Subzero Scorpion : ataca Subzero
-            Si recibe congelamiento de Subzero y su nivel de salud es mayor a 500. El impacto de multiplica por 1.5
-            Congelamiento, golpea con 40 de daño y permite volver a golpear.
-            Si congelamiento inmediatamente aparece, Subzero recibe 100 de daño.
-        */
-        /*
-            Pelea Subzero Scorpion : ataca Scorpion
-            Si recibe lanzallamas de Scorpion y su nivel de salud es menor a 500. El impacto se multiplica por 1.3 de
-             lo contrario es 80.
-            Lanzallamas, golpea con 40 de daño y permite volver a golpear. Si lanzallamas inmediatamente aparece, y
-            Scorpion tiene menos de 100 de salud.
-            Scorpion realiza fatality()(toma el valor de la salud y ataca con ese valor).
-         */

@@ -7,13 +7,13 @@ public class Rayden extends Fighter {
         super(name);
     }
 
-    public float nivelRayo() {
+    public int nivelRayo() {
         return nivelRayo;
     }
 
     public void aunmentarRayo(){
         if (this.nivelRayo >= 200){
-            this.nivelRayo = 40;
+            this.nivelRayo = 200;
         }
         this.nivelRayo +=  40;
     }

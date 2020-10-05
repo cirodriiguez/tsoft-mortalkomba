@@ -11,25 +11,25 @@ public abstract class Fighter {
         this.name = name;
     }
 
-    public float getHealth() {
-        return health;
+    public int getHealth() {
+        return (int)health;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setHealth(float health) {
+    public void setHealth(int health) {
         this.health = health;
     }
 
 
-    public float Golpe() {
-        return (float) (Math.floor(Math.random() * (100 - 10 + 1) + 50));
+    public int Golpe() {
+        return (int) Math.floor(Math.random() * (100 - 10 + 1) + 50);
     }
 
-    public float Patada() {
-        return (float) (Math.floor(Math.random() * (120 - 10 + 1) + 30));
+    public int Patada() {
+        return (int) (Math.floor(Math.random() * (120 - 10 + 1) + 30));
     }
 
     public int Salto() {
@@ -39,8 +39,9 @@ public abstract class Fighter {
     public boolean Critico() {
         double crit = Math.floor((Math.random() * 100));
         boolean confirm;
-        if (crit >= 0 || crit < 11) {
+        if (crit >= 0 && crit < 11) {
             confirm = true;
+            System.out.println("Critico" + crit);
         } else {
             confirm = false;
         }

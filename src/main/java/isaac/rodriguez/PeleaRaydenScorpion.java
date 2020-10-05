@@ -1,4 +1,5 @@
 package isaac.rodriguez;
+import java.util.concurrent.TimeUnit;
 
 public class PeleaRaydenScorpion {
     private Rayden rayden = new Rayden("Rayden");
@@ -12,14 +13,14 @@ public class PeleaRaydenScorpion {
 
     public void golpeCriticoOComunScorpion() {
         if (scorpion.Critico()) {
-            rayden.setHealth((float) (rayden.getHealth() - (scorpion.getDatos()[1] * 1.30)));
+            rayden.setHealth((int)(rayden.getHealth() - (scorpion.getDatos()[1] * 1.30)));
         } else {
             rayden.setHealth(rayden.getHealth() - scorpion.getDatos()[1]);
         }
     }
 
     public void golpeLanzallamasScorpion(float intencidad) {
-        rayden.setHealth((float) (rayden.getHealth() - (scorpion.getDatos()[1] * intencidad)));
+        rayden.setHealth((int) (rayden.getHealth() - (scorpion.getDatos()[1] * intencidad)));
         this.puntajePeleaScorpionRayden();
         scorpion.accion();
         if (scorpion.getDatos()[0] == 4) {
@@ -54,14 +55,14 @@ public class PeleaRaydenScorpion {
 
     public void golpeCriticoOComunRayden() {
         if (rayden.Critico()) {
-            scorpion.setHealth((float) (scorpion.getHealth() - (rayden.getDatos()[1] * 1.30)));
+            scorpion.setHealth((int) (scorpion.getHealth() - (rayden.getDatos()[1] * 1.30)));
         } else {
             scorpion.setHealth(scorpion.getHealth() - rayden.getDatos()[1]);
         }
     }
 
     public void golpeRayoRayden(float intencidad) {
-        scorpion.setHealth((float) (scorpion.getHealth() - (rayden.getDatos()[1] * intencidad)));
+        scorpion.setHealth((int) (scorpion.getHealth() - (rayden.getDatos()[1] * intencidad)));
     }
 
 
@@ -87,6 +88,11 @@ public class PeleaRaydenScorpion {
         String ganador = "";
         while (scorpion.getHealth() > 0 && rayden.getHealth() > 0) {
             int turno = (int) Math.floor((Math.random() * (2 - 1 + 1) + 1));
+            /*try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }*/
             switch (turno) {
                 case 1:
                     this.ataqueScorpionARayden();

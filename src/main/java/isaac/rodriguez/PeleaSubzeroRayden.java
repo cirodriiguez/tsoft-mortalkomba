@@ -1,4 +1,5 @@
 package isaac.rodriguez;
+import java.util.concurrent.TimeUnit;
 
 public class PeleaSubzeroRayden {
     private Subzero subzero = new Subzero("Subzero");
@@ -12,14 +13,14 @@ public class PeleaSubzeroRayden {
 
     public void golpeCriticoOComunSubzero() {
         if (subzero.Critico()) {
-            rayden.setHealth((float) (rayden.getHealth() - (subzero.getDatos()[1] * 1.30)));
+            rayden.setHealth((int) (rayden.getHealth() - (subzero.getDatos()[1] * 1.30)));
         } else {
             rayden.setHealth(rayden.getHealth() - subzero.getDatos()[1]);
         }
     }
 
     public void golpeCongelamientoSubzero(float intencidad) {
-        rayden.setHealth((float) (rayden.getHealth() - (subzero.getDatos()[1] * intencidad)));
+        rayden.setHealth((int) (rayden.getHealth() - (subzero.getDatos()[1] * intencidad)));
         this.puntajePeleaSubzeroRyaden();
         subzero.accion();
         if (subzero.getDatos()[0] == 4) {
@@ -50,14 +51,14 @@ public class PeleaSubzeroRayden {
 
     public void golpeCriticoOComunRayden() {
         if (rayden.Critico()) {
-            subzero.setHealth((float) (subzero.getHealth() - (rayden.getDatos()[1] * 1.30)));
+            subzero.setHealth((int) (subzero.getHealth() - (rayden.getDatos()[1] * 1.30)));
         } else {
             subzero.setHealth(subzero.getHealth() - rayden.getDatos()[1]);
         }
     }
 
     public void golpeRayoRayden(float intencidad) {
-        subzero.setHealth((float) (subzero.getHealth() - (rayden.getDatos()[1] * intencidad)));
+        subzero.setHealth((int) (subzero.getHealth() - (rayden.getDatos()[1] * intencidad)));
     }
 
     public void ataqueRaydenASubzero() {
@@ -83,6 +84,11 @@ public class PeleaSubzeroRayden {
         String ganador = "";
         while (subzero.getHealth() > 0 && rayden.getHealth() > 0) {
             int turno = (int) Math.floor((Math.random() * (2 - 1 + 1) + 1));
+            /*try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }*/
             switch (turno) {
                 case 1:
                     this.ataqueSubzeroARayden();

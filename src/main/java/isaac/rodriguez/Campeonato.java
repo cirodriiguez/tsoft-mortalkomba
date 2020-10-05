@@ -26,6 +26,7 @@ public class Campeonato {
                     break;
             }
         }
+
         if (rayden > 1){
             ganador = "Rayden Campeón";
         } else if (scorpion > 1){
@@ -36,16 +37,22 @@ public class Campeonato {
             ganador = "Empate";
         }
 
+        System.out.println("\u001B[33m" + "---------------------" + "\u001B[0m");
+        System.out.println("\u001B[33m" + "\uD83C\uDFC6" + " " + ganador + " " + "\uD83C\uDFC6" + "\u001B" +
+                "[0m");
+        System.out.println("\u001B[33m" + "---------------------" + "\u001B[0m");
+
         return ganador;
     }
 
-    public static void main (String[] args){
+    /*public static void main (String[] args){
         Campeonato campeonato = new Campeonato();
         String campeon = campeonato.pelea();
+
         System.out.println("\u001B[33m" + "---------------------" + "\u001B[0m");
         System.out.println("\u001B[33m" + "\uD83C\uDFC6" + " " + campeon + " " + "\uD83C\uDFC6" + "\u001B" +
                 "[0m");
         System.out.println("\u001B[33m" + "---------------------" + "\u001B[0m");
-    }
+    }*/
 }
 

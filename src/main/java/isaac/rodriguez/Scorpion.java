@@ -2,15 +2,16 @@ package isaac.rodriguez;
 
 public class Scorpion extends Fighter {
     private int datos[] = new int[2];
+    private int nivelLanzallamas = 40;
     public Scorpion(String name) {
         super(name);
     }
 
-    public float Lanzallamas() {
-        return 40;
+    public int Lanzallamas() {
+        return nivelLanzallamas;
     }
 
-    public float fatality(float health){
+    public int fatality(int health){
         System.out.println("\u001B[33m"+ this.getName() + "\u001B[0m" + ": " + "ha utilizado su fatality" +"\u001B[33m"+ "\uD83D\uDCA5"+"\u001B[0m");
         return health;
     }
